@@ -39,7 +39,6 @@ body {
     box-sizing: border-box;
 	color: rgba(255, 255, 255, 0.5);
 	border: 1px solid rgba(255, 255, 255, 0.1);
-	background-color: rgba(255, 255, 255, 0.4);
 }
 
 .colors ul {
@@ -63,11 +62,25 @@ body {
 	-webkit-transition: all 0.2s;
 }
 
-.colors li span.fa:hover {
-	background-color: rgba(255, 255, 255, 0.2);
+.badge, span.fa:hover, .form-input  {
+	background-color: rgba(255, 255, 255, 0.1);
+}
+
+.badge {
+	padding: 5px 12px;
+	display: inline-block;
+	width: 60px;
+	text-align: center;
+	margin-right: 15px;
+	border-radius: 2px;
+	color: rgba(255, 255, 255, 0.3);
 }
 
 /** Invert Colors **/
+
+html.invert .badge, html.invert .form-input, html.invert span.fa:hover {
+	background-color: rgba(0, 0, 0, 0.1)	
+}
 
 html.invert .title {
 	color: rgba(0, 0, 0, 0.5);
@@ -76,13 +89,9 @@ html.invert .title {
 html.invert .form-input {
 	color: rgba(0, 0, 0, 0.5);
 	border: 1px solid rgba(0, 0, 0, 0.1);
-	background-color: rgba(0, 0, 0, 0.1)
 }
 
 html.invert .colors ul {
 	color: rgba(0, 0, 0, 0.4);
 }
 
-html.invert .colors li span.fa:hover {
-	background-color: rgba(0, 0, 0, 0.1);
-}
