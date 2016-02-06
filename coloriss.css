@@ -1,0 +1,88 @@
+
+*:focus {
+	outline: none;
+}
+
+html {
+	min-height: 100%;
+	/*background-image: -webkit-radial-gradient(bottom right, #fff 0%, #eee 100%);*/
+	background-color: #333;
+	-webkit-transition: background-color 0.5s;
+	transition: background-color 0.5s;
+}
+
+body {
+	font-size: 1em;
+}
+
+.title {
+	text-align: center;
+	font-family: 'Raleway';
+	margin: 6% 0;
+	font-size: 4.2em;
+	color: rgba(255, 255, 255, 0.6);
+}
+
+.container {
+	position: relative;
+	width: 640px;
+	margin: 0 auto;
+	padding: 20px;
+}
+
+.form-input {
+	display: block;
+	width: 100%;
+	margin: 0 0 25px;
+	padding: 10px 20px;
+	border-radius: 2px;
+    box-sizing: border-box;
+	color: rgba(255, 255, 255, 0.5);
+	border: 1px solid rgba(255, 255, 255, 0.1);
+	background-color: rgba(255, 255, 255, 0.4);
+}
+
+.colors ul {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	color: #eee;
+}
+
+.colors ul li {
+	display: block;
+	width: 100%;
+	padding: 15px 0;
+	position: relative;
+}
+
+.colors li span.fa {
+	float: right;
+	padding: 10px;
+	border-radius: 100%;
+	-webkit-transition: all 0.2s;
+}
+
+.colors li span.fa:hover {
+	background-color: rgba(255, 255, 255, 0.2);
+}
+
+/** Invert Colors **/
+
+html.invert .title {
+	color: rgba(0, 0, 0, 0.5);
+}
+
+html.invert .form-input {
+	color: rgba(0, 0, 0, 0.5);
+	border: 1px solid rgba(0, 0, 0, 0.1);
+	background-color: rgba(0, 0, 0, 0.1)
+}
+
+html.invert .colors ul {
+	color: rgba(0, 0, 0, 0.4);
+}
+
+html.invert .colors li span.fa:hover {
+	background-color: rgba(0, 0, 0, 0.1);
+}

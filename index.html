@@ -1,17 +1,60 @@
 <!DOCTYPE html>
-<html>
+<html ng-app="Coloriss"  ng-controller="AppCtrl as app" style="background-color: {{ colors.hex }}" ng-class="{invert: invert }">
 <head>
 	<title>Coloriss</title>
 	<meta charset="utf-8">
+	
+	<link href='https://fonts.googleapis.com/css?family=Raleway:300' rel='stylesheet' type='text/css'>
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
 
 	<link rel="stylesheet" type="text/css" href="coloriss.css">
+
+	<script type="text/javascript" src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+
+	<script type="text/javascript" src="coloriss.js"></script>
 
 </head>
 <body>
 
-	<h1>Coloriss</h1>
+	<h1 class="title">Coloriss</h1>
 
-	
+	<div class="container">
+
+		<form>
+			
+			<div class="form-group">
+				<input type="hex" name="color" ng-model="form.color" placeholder="Enter a color to convert" class="form-input" ng-change="update()">
+			</div>
+
+			<!-- <button>Convert</button> -->
+
+		</form>
+
+		<div class="colors">
+
+			<ul>
+				<li ng-hide="colors.hex[0] !== '#'"><span class="badge">Hex</span> {{ colors.hex }}
+					<span class="fa fa-clipboard"></span>
+				</li>
+
+				<li ng-hide="colors.rgb.r === -1 || colors.rgb.g === -1 || colors.rgb.b === -1"><span class="badge">RGB</span>
+					{{ colors.rgb.r }} {{ colors.rgb.g }} {{ colors.rgb.b }}					
+					<span class="fa fa-clipboard"></span>
+				</li>
+
+				<li><span class="fa fa-clipboard"></span></li>
+			</ul>
+
+		</div>
+
+		<div class="suggest">
+
+		<!-- Soon some suggestions will come here -->
+
+		</div>
+
+	</div>
 
 </body>
 </html>
