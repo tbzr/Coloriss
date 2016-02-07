@@ -82,6 +82,10 @@ html.invert .badge, html.invert .form-input, html.invert span.fa:hover {
 	background-color: rgba(0, 0, 0, 0.1)	
 }
 
+html.invert .badge {
+	color: rgba(0, 0, 0, 0.2);
+}
+
 html.invert .title {
 	color: rgba(0, 0, 0, 0.5);
 }
