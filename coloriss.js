@@ -24,7 +24,15 @@
 
 		Coloriss.prototype.red = function () {
 			return this.red;
-		}
+		};
+
+		Coloriss.prototype.green = function () {
+			return this.green;
+		};
+
+		Coloriss.prototype.blue = function () {
+			return this.blue;
+		};
 
 		Coloriss.prototype.grey = function () {
 			return (this.red + this.green + this.blue) / 3;
