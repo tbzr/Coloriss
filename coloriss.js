@@ -13,7 +13,6 @@ angular.module('Coloriss', [])
 		grey: '#EEEEEE',
 		black: '#000000',
 		dark: '#333333',
-		white: '#FFFFFF',
 	};
 
 	$scope.form = {};
@@ -34,7 +33,6 @@ angular.module('Coloriss', [])
 
 	$scope.needInvert = function () {
 		var color = angular.copy($scope.colors.rgb);
-		console.log(color);
 		var gs = Math.floor((color.r + color.g + color.b) / 3);
 		return (gs >= 100);
 	};
