@@ -13,6 +13,7 @@ angular.module('Coloriss', [])
 		grey: '#EEEEEE',
 		black: '#000000',
 		dark: '#333333',
+		white: '#FFFFFF'
 	};
 
 	$scope.form = {};

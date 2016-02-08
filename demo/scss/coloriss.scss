@@ -1,16 +1,29 @@
 
+@mixin transition($trans) {
+	-webkit-transition: $trans;
+	   -moz-transition: $trans;
+	    -ms-transition: $trans;
+	     -o-transition: $trans;
+	        transition: $trans;
+}
+@mixin borderRadius($radius) {
+	-webkit-border-radius: $radius;
+	   -moz-border-radius: $radius;
+	    -ms-border-radius: $radius;
+	     -o-border-radius: $radius;
+	        border-radius: $radius;
+}
+
+$main-color: #333;
+
 *:focus {
 	outline: none;
 }
 
 html {
 	min-height: 100%;
-	background-color: #333;
-	-webkit-transition: background-color 0.5s;
-	-moz-transition: background-color 0.5s;
-	-ms-transition: background-color 0.5s;
-	-o-transition: background-color 0.5s;
-	transition: background-color 0.5s;
+	background-color: $main-color;
+	@include transition(background-color 0.5s);
 }
 
 body {
@@ -65,12 +78,9 @@ body {
 .colors li span.fa {
 	float: right;
 	padding: 10px;
-	border-radius: 100%;
-	-webkit-transition: all 0.2s;
-	-moz-transition: all 0.2s;
-	-ms-transition: all 0.2s;
-	-o-transition: all 0.2s;
-	transition: all 0.2s;
+
+	@include borderRadius(100%);
+	@include transition(all 0.2s);
 }
 
 .badge, span.fa:hover, .form-input  {

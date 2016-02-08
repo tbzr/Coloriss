@@ -1,9 +1,18 @@
 # Coloriss
 CSS-accepted colors formats converter. RGB to Hex. Hex to RGB
 
+## Installation
+
+Simply git clone the demo
+```
+git clone https://github.com/tbzr/coloriss
+cd coloriss ; git checkout gh-pages
+node index.js
+```
+
 ## Usage
 
-Write down your hex value to convert into RGB or the opposite. You can also put some basic color name from the list bellow and get their Hex and RGB values. 
+Write down your hex value to convert into RGB or the opposite. You can also put some basic color name from the list bellow and get their Hex and RGB values.
 
 ## Color list
 
