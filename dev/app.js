@@ -13,7 +13,17 @@ angular.module('Coloriss', [])
 		grey: '#EEEEEE',
 		black: '#000000',
 		dark: '#333333',
-		white: '#FFFFFF'
+		white: '#FFFFFF',
+
+		// New colors 1.1
+		pink: '#F7CAC9',
+		gold: '#FFD700',
+		silver: '#C0C0C0',
+		copper: '#B87333',
+		brass: '#B5A642',
+		azur: '#007FFF',
+		serenity: '#92A8D1'
+
 	};
 
 	$scope.form = {};

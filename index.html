@@ -25,35 +25,41 @@
 </head>
 <body>
 
-	<h1 class="title">C<span class="isolated">olori</span>ss</h1>
-
-	<!-- <p align="center">Punch line.</p> -->
-
 	<div class="container">
 
-		<form>
-			
-			<div class="form-group">
-				<input type="hex" name="color" ng-model="form.color" placeholder="Enter a color to convert" class="form-input" ng-change="update()">
+		<div class="block">
+
+			<div class="centered-cell">
+
+				<h1 class="title">C<span class="isolated">olori</span>ss</h1>
+
+				<form>
+					
+					<div class="form-group">
+						<input type="hex" name="color" ng-model="form.color" placeholder="Enter a color to convert" class="form-input" ng-change="update()">
+					</div>
+
+					<!-- <button>Convert</button> -->
+
+				</form>
+
+				<div class="colors">
+
+					<ul>
+						<li ng-hide="colors.hex[0] !== '#'"><span class="badge">Hex</span> {{ colors.hex }}
+							<!-- <span class="fa fa-clipboard"></span> -->
+						</li>
+
+						<li ng-hide="colors.rgb.r === -1 || colors.rgb.g === -1 || colors.rgb.b === -1"><span class="badge">RGB</span>
+							{{ colors.rgb.r }}, {{ colors.rgb.g }}, {{ colors.rgb.b }}					
+							<!-- <span class="fa fa-clipboard"></span> -->
+						</li>
+
+					</ul>
+
+				</div>
+
 			</div>
-
-			<!-- <button>Convert</button> -->
-
-		</form>
-
-		<div class="colors">
-
-			<ul>
-				<li ng-hide="colors.hex[0] !== '#'"><span class="badge">Hex</span> {{ colors.hex }}
-					<!-- <span class="fa fa-clipboard"></span> -->
-				</li>
-
-				<li ng-hide="colors.rgb.r === -1 || colors.rgb.g === -1 || colors.rgb.b === -1"><span class="badge">RGB</span>
-					{{ colors.rgb.r }}, {{ colors.rgb.g }}, {{ colors.rgb.b }}					
-					<!-- <span class="fa fa-clipboard"></span> -->
-				</li>
-
-			</ul>
 
 		</div>
 
@@ -64,6 +70,5 @@
 		</div>
 
 	</div>
-
 </body>
 </html>

@@ -16,10 +16,20 @@ body {
 .isolated {
   color: rgba(255, 255, 255, 0.4); }
 
+.block {
+  display: table;
+  height: 100vh;
+  position: relative;
+  vertical-align: middle;
+  width: 100%; }
+  .block .centered-cell {
+    display: table-cell;
+    vertical-align: middle; }
+
 .title {
   text-align: center;
   font-family: 'Righteous';
-  margin: 6% 0 3%;
+  /*margin: 6% 0 3%;*/
   font-size: 4.2em;
   letter-spacing: 3px;
   color: rgba(255, 255, 255, 0.6); }
@@ -27,8 +37,7 @@ body {
 .container {
   position: relative;
   width: 640px;
-  margin: 0 auto;
-  padding: 20px; }
+  margin: 0 auto; }
 
 .form-input {
   display: block;
