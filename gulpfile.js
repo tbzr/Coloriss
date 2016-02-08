@@ -6,18 +6,18 @@ var minify = require('gulp-minify-css');
 gulp.task('default', ['sass']);
 
 gulp.task('sass', function(done) {
-  gulp.src('./demo/scss/coloriss.scss')
+  gulp.src('./dev/scss/coloriss.scss')
     .pipe(sass())
     .on('error', sass.logError)
-    .pipe(gulp.dest('./demo/css/'))
+    .pipe(gulp.dest('./dev/css/'))
     .pipe(minify({
       keepSpecialComments: 0
     }))
     .pipe(rename({ extname: '.min.css' }))
-    .pipe(gulp.dest('./demo/css/'))
+    .pipe(gulp.dest('./dev/css/'))
     .on('end', done);
 });
 
 gulp.task('watch', function() {
-  gulp.watch('./demo/scss/coloriss.scss', ['sass']);
+  gulp.watch('./dev/scss/coloriss.scss', ['sass']);
 });

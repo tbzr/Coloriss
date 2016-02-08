@@ -1,1 +1,69 @@
-demo/index.html
+<!DOCTYPE html>
+<html ng-app="Coloriss"  ng-controller="AppCtrl as app" style="background-color: {{ colors.hex }}" ng-class="{invert: invert}">
+<head>
+	<title>Coloriss</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0">
+	<meta http-equiv="content-language" content="en">
+	<meta name="language" content="en">
+	<meta name="author" content="Thomas Bazire">
+	<meta name="description" content="Coloriss, the better way to convert RGB to hex, hex to RGB">
+	<meta name="keywords" content="color,css,converter,rgb,hex,webdesign,ui,web,development">
+	<meta name="robots" content="index, follow">
+
+	<link href='https://fonts.googleapis.com/css?family=Righteous' rel='stylesheet' type='text/css'>
+
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
+	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
+
+	<link rel="stylesheet" type="text/css" href="/demo/css/coloriss.min.css">
+
+	<script type="text/javascript" src="/demo/libs/angular/angular.min.js"></script>
+
+	<script type="text/javascript" src="/demo/app.js"></script>
+
+</head>
+<body>
+
+	<h1 class="title">C<span class="isolated">olori</span>ss</h1>
+
+	<!-- <p align="center">Punch line.</p> -->
+
+	<div class="container">
+
+		<form>
+			
+			<div class="form-group">
+				<input type="hex" name="color" ng-model="form.color" placeholder="Enter a color to convert" class="form-input" ng-change="update()">
+			</div>
+
+			<!-- <button>Convert</button> -->
+
+		</form>
+
+		<div class="colors">
+
+			<ul>
+				<li ng-hide="colors.hex[0] !== '#'"><span class="badge">Hex</span> {{ colors.hex }}
+					<!-- <span class="fa fa-clipboard"></span> -->
+				</li>
+
+				<li ng-hide="colors.rgb.r === -1 || colors.rgb.g === -1 || colors.rgb.b === -1"><span class="badge">RGB</span>
+					{{ colors.rgb.r }}, {{ colors.rgb.g }}, {{ colors.rgb.b }}					
+					<!-- <span class="fa fa-clipboard"></span> -->
+				</li>
+
+			</ul>
+
+		</div>
+
+		<div class="suggest">
+
+		<!-- Soon some suggestions will come here -->
+
+		</div>
+
+	</div>
+
+</body>
+</html>
