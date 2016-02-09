@@ -45,22 +45,26 @@ angular.module('Coloriss', [])
 
 	$scope.update = function () {
 
-		var color = angular.copy($scope.form.color);
-		var cs = new Coloriss(color);
+		var color, cs, i;
+		
+		color = angular.copy($scope.form.color);
 
 		if (!$scope.form.color)
 			$scope.reinit();
 
-		for (var i in colors) {
+		for (i in colors) {
 
 			if (color.toLowerCase() === i) {
 				color = colors[i];
-				$scope.form.color = color;
 			}
 		}
 
-		$scope.colors.hex = cs.hex();
-		$scope.colors.rgb = cs.rgb();
+		if (color.length > 3) {
+			// Call Coloriss API.
+			cs = new Coloriss(color);
+			$scope.colors.hex = cs.hex();
+			$scope.colors.rgb = cs.rgb();
+		}
 
 		$scope.invert = $scope.needInvert() ? true : false;
 	};
