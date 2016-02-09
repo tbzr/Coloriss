@@ -16,6 +16,7 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.5.0/css/font-awesome.min.css">
 	<link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/normalize/3.0.3/normalize.min.css">
 
+	<link rel="stylesheet" type="text/css" href="/css/animate.css">
 	<link rel="stylesheet" type="text/css" href="/css/coloriss.min.css">
 
 	<script type="text/javascript" src="/libs/angular/angular.min.js"></script>
@@ -25,15 +26,17 @@
 </head>
 <body>
 
+	<p align="center" class="github"><a href="https://github.com/tbzr/coloriss" title="Github Repository of Coloriss" class="fa fa-github-alt animated infinite pulse"></a></p>
+
 	<div class="container">
 
 		<div class="block">
 
 			<div class="centered-cell">
 
-				<h1 class="title">C<span class="isolated">olori</span>ss</h1>
+				<h1 class="title animated fadeInUp">C<span class="isolated">olori</span>ss</h1>
 
-				<form>
+				<form class="animated fadeInUp">
 					
 					<div class="form-group">
 						<input type="hex" name="color" ng-model="form.color" placeholder="Enter a color to convert" class="form-input" ng-change="update()">

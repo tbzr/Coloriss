@@ -115,6 +115,19 @@ body {
 	background-color: $white;
 }
 
+.github {
+	position: absolute;
+	text-align: center;
+	bottom: 25px;
+	width: 100%;
+
+	a {
+		font-size: 2em;
+		text-decoration: none;		
+		color: rgba(255, 255, 255, 0.4);
+	}
+}
+
 /** Invert Colors **/
 
 html.invert .badge, html.invert .form-input, html.invert span.fa:hover {
@@ -129,7 +142,7 @@ html.invert .badge {
 	color: rgba(0, 0, 0, 0.2);
 }
 
-html.invert .title {
+html.invert .title, html.invert a.fa {
 	color: rgba(0, 0, 0, 0.5);
 }
 
