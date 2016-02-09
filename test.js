@@ -1,7 +1,7 @@
 var assert = require('assert');
 var Coloriss = require('./coloriss');
 
-describe("01 init", function () {
+describe("01 - Init", function () {
 
 	// Init
 
@@ -102,6 +102,24 @@ describe("03 - RGB colors", function () {
 		assert.deepEqual(ret, rgb);
 	});
 
+	it("should convert RGB color into valid RGB color as String - 1", function () {
+
+		var cs, rgb;
+
+		rgb = "rgb(0, 0, 5)";
+		cs = new Coloriss(rgb);
+		assert.strictEqual(cs.rgb(true), rgb);
+	});
+
+	it("should convert RGB color into valid RGB color as String using dedicated method - 1", function () {
+
+		var cs, rgb;
+
+		rgb = "rgb(0, 0, 5)";
+		cs = new Coloriss(rgb);
+		assert.strictEqual(cs.rgbAsStr(), rgb);
+	});
+
 });
 
 describe('04 - RGBA colors', function () {
@@ -145,4 +163,51 @@ describe('04 - RGBA colors', function () {
 		cs = new Coloriss('rgb(255, 255, 255, 0.42)');
 		assert.deepEqual(cs.rgba(), rgba);
 	});
+
+	it("should convert RGBA color into valid RGBA color as String - 1", function () {
+
+		var cs, rgba;
+
+		rgba = "rgba(10, 210, 115, 0.2)";
+		cs = new Coloriss(rgba);
+		assert.strictEqual(cs.rgba(true), rgba);
+	});
+
+	it("should convert RGBA color into valid RGBA color as String using dedicated method - 1", function () {
+
+		var cs, rgb;
+
+		rgb = "rgba(10, 210, 115, 0.2)";
+		cs = new Coloriss(rgb);
+		assert.strictEqual(cs.rgbaAsStr(), rgb);
+	});	
+});
+
+describe('04 - Individual colors', function () {
+
+	it("should convert hexadecimal color into correct red", function () {
+		var cs = new Coloriss('#4200ff');
+		assert.strictEqual(cs.red(), 66);
+	});
+
+	it("should convert hexadecimal color into correct green", function () {
+		var cs = new Coloriss('#4200ff');
+		assert.strictEqual(cs.green(), 0);
+	});
+
+	it("should convert hexadecimal color into correct blue", function () {
+		var cs = new Coloriss('#4200ff');
+		assert.strictEqual(cs.blue(), 255);
+	});
+
+	it("should convert RGBA color into correct alpha", function () {
+		var cs = new Coloriss('rgba(255, 255, 255, 0.42)');
+		assert.strictEqual(cs.alpha(), 0.42);
+	});
+
+	it("should convert hexadecimal color into correct red", function () {
+		var cs = new Coloriss('#fff');
+		assert.strictEqual(cs.grayScale(), 255);
+	});
+
 });

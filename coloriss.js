@@ -3,7 +3,7 @@
 
     var Coloriss = (function () {
 
-        var _hex, _rgb, _colors;
+        var _colors;
 
         _colors = {
             red: '#C0392B',
@@ -16,8 +16,6 @@
             black: '#000000',
             dark: '#333333',
             white: '#FFFFFF',
-
-            // New colors 1.1
             pink: '#F7CAC9',
             gold: '#FFD700',
             silver: '#C0C0C0',
@@ -28,10 +26,10 @@
         };
 
         var Coloriss = function (color, options) {
-        	// this._hex = this._rgb = undefined;
+            this._hex = this._rgb = undefined;
             // Options not used yet.
             if (typeof color !== 'undefined') {
-                parse(color);
+                this.parse(color);
             }
         };
 
@@ -65,7 +63,7 @@
             g = 0xFF & (hex >> 8);
             b = 0xFF & hex;
 
-            return {a:a, r:r, g:g, b:b};
+            return {r:r, g:g, b:b, a:a};
         };
 
         var RGBtoHex = function (rgb) {
@@ -75,74 +73,135 @@
             }
         };
 
-        var parse = function (color) {
+        var toString = function (obj) {
+            var s, n, v = [];
+
+            s = 'rgb';
+            s += (typeof obj.a !== 'undefined') ? 'a(' : '(';
+            Object.keys(obj).map(function (key, i) {
+                v.push(obj[key]);
+            });
+            s += v.join(', ') + ')';
+            return s;
+        };
+
+        /**
+         * Main function, determine which type of color the value passed 
+         * in parameter is. And then format as rgb/hex
+         */ 
+        Coloriss.prototype.parse = function (color) {
 
             var match;
 
             // Match an Hexadecimal color
             if ((match = color.match(/^#?(?:[0-9a-f]{3}){1,2}$/i))) {
-                _hex = '#' + sanitizeHex(match[0]);
-                _rgb = hexToRGB(_hex);
+                this._hex = '#' + sanitizeHex(match[0]);
+                this._rgb = hexToRGB(this._hex);
             }
             // Match an rgb(a) color
             else if ((match = color.match(/^rgba?\((\d+),\s*(\d+),\s*(\d+)(?:,\s*(\d+(?:\.\d+)?))?\)$/))) {
                 match.shift();
-                _rgb = {a:match[3], r:match[0], g:match[1], b:match[2]};
-                _hex = '#' + RGBtoHex(_rgb);
+                this._rgb = {
+                    r: parseInt(match[0]),
+                    g: parseInt(match[1]),
+                    b: parseInt(match[2]),
+                    a: parseFloat(match[3])
+                };
+                this._hex = '#' + RGBtoHex(this._rgb);
             }
         };
 
+        /**
+         * Same as the constructor but without options.
+         */
         Coloriss.prototype.color = function (c) {
-        	parse(c);
+        	this.parse(c);
         	return this;
         };
 
         Coloriss.prototype.hex = function () {
-            return _hex;
+            return this._hex;
         };
 
-        Coloriss.prototype.rgb = function () {
-        	delete _rgb.a;
-            return _rgb;
+        Coloriss.prototype.rgb = function (str) {
+        	delete this._rgb.a;
+
+            if (typeof str !== 'undefined' && str) {
+                return toString(this._rgb);
+            }
+            return this._rgb;
         };
 
-        Coloriss.prototype.rgba = function () {
-        	if (typeof _rgb.a === 'undefined')
-        		_rgb.a = 1;
-            return _rgb;
+        Coloriss.prototype.rgba = function (str) {
+        	if (!this._rgb.a || typeof this._rgb.a === 'undefined')
+        		this._rgb.a = 1;
+            if (typeof str !== 'undefined' && str) {
+                return toString(this._rgb);
+            }
+            return this._rgb;
+        };
+
+        Coloriss.prototype.rgbAsStr = function () {
+            delete this._rgb.a;
+            return toString(this._rgb);
+        };
+
+        Coloriss.prototype.rgbaAsStr = function () {
+            return toString(this._rgb);
         };
 
         Coloriss.prototype.alpha = function () {
-            return _rgb.a;
+            return this._rgb.a;
         };
 
         Coloriss.prototype.red = function () {
-            return _rgb.r;
+            return this._rgb.r;
         };
 
         Coloriss.prototype.green = function () {
-            return _rgb.g;
+            return this._rgb.g;
         };
 
         Coloriss.prototype.blue = function () {
-            return _rgb.b;
+            return this._rgb.b;
         };
 
-        Coloriss.prototype.greyScale = function () {
-            var c = _rgb;
+        Coloriss.prototype.grayScale = function () {
+            var c = this._rgb;
             return (c.r + c.g + c.b) / 3;
+        };
+
+        Coloriss.prototype.colors = function () {
+            return this._colors;
+        };
+
+        /**
+         * Pickup a random color from the _colors object
+         */
+        Coloriss.prototype.randomColor = function () {
+
+            var res, i, c = 0;
+
+            for (i in _colors) {
+                if (Math.random() < 1 / ++c)
+                    res = i;
+            }
+            return res;
         };
 
         return Coloriss;
 
     })();
 
+    // Export for node.js
     if (typeof exports !== 'undefined') {
         if (typeof module !== 'undefined' && module.exports) {
             module.exports = Coloriss;
         }
         exports.Coloriss = Coloriss;
-    } else if (typeof define === 'function' && define.amd) {
+    }
+    // Export for AMD
+    else if (typeof define === 'function' && define.amd) {
         define([], function () {
             return Coloriss;
         });

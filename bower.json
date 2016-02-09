@@ -1,0 +1,31 @@
+{
+  "name": "coloriss",
+  "version": "1.0.0",
+  "description": "hex / rgb converter",
+  "main": "coloriss.js",
+  "authors": [
+    "Thomas Bazire"
+  ],
+  "license": "MIT",
+  "keywords": [
+    "hex",
+    "rgb",
+    "rgba",
+    "converter",
+    "coloriss"
+  ],
+  "homepage": "https://github.com/tbzr/coloriss",
+  "moduleType": [
+    "amd",
+    "es6",
+    "globals",
+    "node"
+  ],
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ]
+}
