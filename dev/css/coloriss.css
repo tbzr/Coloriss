@@ -44,10 +44,14 @@ body {
   width: 100%;
   margin: 0 0 25px;
   padding: 10px 20px;
-  border-radius: 2px;
   box-sizing: border-box;
   color: rgba(255, 255, 255, 0.5);
-  border: 1px solid rgba(255, 255, 255, 0.1); }
+  border: 1px solid rgba(255, 255, 255, 0.1);
+  -webkit-border-radius: 2px;
+  -moz-border-radius: 2px;
+  -ms-border-radius: 2px;
+  -o-border-radius: 2px;
+  border-radius: 2px; }
 
 .colors ul {
   list-style: none;
@@ -87,6 +91,9 @@ body {
   border-radius: 2px;
   color: rgba(255, 255, 255, 0.3); }
 
+.suggest {
+  background-color: #ffffff; }
+
 /** Invert Colors **/
 html.invert .badge, html.invert .form-input, html.invert span.fa:hover {
   background-color: rgba(0, 0, 0, 0.1); }
@@ -106,3 +113,5 @@ html.invert .form-input {
 
 html.invert .colors ul {
   color: rgba(0, 0, 0, 0.4); }
+
+/** Media queries **/

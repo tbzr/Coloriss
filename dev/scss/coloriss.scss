@@ -14,6 +14,7 @@
 	        border-radius: $radius;
 }
 
+$white: #ffffff;
 $main-color: #333;
 
 *:focus {
@@ -67,10 +68,11 @@ body {
 	width: 100%;
 	margin: 0 0 25px;
 	padding: 10px 20px;
-	border-radius: 2px;
     box-sizing: border-box;
 	color: rgba(255, 255, 255, 0.5);
 	border: 1px solid rgba(255, 255, 255, 0.1);
+
+	@include borderRadius(2px);
 }
 
 .colors ul {
@@ -109,6 +111,10 @@ body {
 	color: rgba(255, 255, 255, 0.3);
 }
 
+.suggest {
+	background-color: $white;
+}
+
 /** Invert Colors **/
 
 html.invert .badge, html.invert .form-input, html.invert span.fa:hover {
@@ -135,4 +141,6 @@ html.invert .form-input {
 html.invert .colors ul {
 	color: rgba(0, 0, 0, 0.4);
 }
+
+/** Media queries **/
 
