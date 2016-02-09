@@ -6,7 +6,7 @@ gulp.task('default', ['compress']);
 
 gulp.task('compress', function () {
 
-	return gulp.src('*.js')
+	return gulp.src('coloriss.js')
 	.pipe(uglify())
 	.pipe(rename({ extname: '.min.js' }))
 	.pipe(gulp.dest('dist'));
