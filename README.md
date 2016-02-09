@@ -1,4 +1,4 @@
-# Coloriss
+# Coloriss Demo
 CSS-accepted colors formats converter. RGB to Hex. Hex to RGB
 
 ## Installation
@@ -30,3 +30,20 @@ The following is a small list of some flat design colors. Type the corresponding
 | black | #000000 |
 | dark | #333333 |
 | white | #FFFFFF |
+| pink | #F7CAC9 |
+| gold | #FFD700 |
+| silver | #C0C0C0 |
+| copper | #B87333 |
+| brass | #B5A642 |
+| azur | #007FFF |
+| serenity | #92A8D1 |
+
+## Todo
+- Coloriss API
+
+## Contribution
+Feel free to add new colors or helping me implementing the coloriss API. :)
+
+## License
+
+Coloriss is open-sourced and licensed under the [MIT license](http://opensource.org/licenses/MIT).
