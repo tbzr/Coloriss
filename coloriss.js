@@ -28,6 +28,7 @@
         };
 
         var Coloriss = function (color, options) {
+        	// this._hex = this._rgb = undefined;
             // Options not used yet.
             if (typeof color !== 'undefined') {
                 parse(color);
@@ -59,7 +60,7 @@
 
             hex = parseInt("0x" + sanitizeHex(hex));
 
-            a = hex >> 24 || 1;
+            a = 1;
             r = 0xFF & (hex >> 16);
             g = 0xFF & (hex >> 8);
             b = 0xFF & hex;
@@ -91,6 +92,11 @@
             }
         };
 
+        Coloriss.prototype.color = function (c) {
+        	parse(c);
+        	return this;
+        };
+
         Coloriss.prototype.hex = function () {
             return _hex;
         };
@@ -101,6 +107,8 @@
         };
 
         Coloriss.prototype.rgba = function () {
+        	if (typeof _rgb.a === 'undefined')
+        		_rgb.a = 1;
             return _rgb;
         };
 
