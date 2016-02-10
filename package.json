@@ -1,6 +1,6 @@
 {
   "name": "coloriss",
-  "version": "1.0.0",
+  "version": "1.1.1",
   "description": "hex / rgb converter",
   "main": "coloriss.js",
   "dependencies": {
@@ -17,7 +17,7 @@
     "mocha": "^2.4.5"
   },
   "scripts": {
-    "test": "mocha --timeout 10000"
+    "test": "mocha --timeout 10000 test/test.js"
   },
   "repository": {
     "type": "git",
