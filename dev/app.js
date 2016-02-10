@@ -43,6 +43,13 @@ angular.module('Coloriss', [])
 		};		
 	};
 
+	$scope.listen = function (event) {
+		if (event.keyCode === 27 && event.which === 27) {
+			$scope.form.color = '';
+			$scope.reinit();
+		}
+	};
+
 	$scope.update = function () {
 
 		var color, cs, i;
