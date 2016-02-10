@@ -40,13 +40,14 @@ angular.module('Coloriss', [])
 		$scope.colors = {
 			hex: '000000',
 			rgb: {r: -1, g: -1, b: -1}
-		};		
+		};
 	};
 
 	$scope.listen = function (event) {
 		if (event.keyCode === 27 && event.which === 27) {
 			$scope.form.color = '';
 			$scope.reinit();
+			$scope.invert = false;
 		}
 	};
 
