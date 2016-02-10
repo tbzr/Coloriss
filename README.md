@@ -25,7 +25,7 @@ console.log(cs.rgb()); // output: {r:255, g:255, b:255}
 console.log(cs.rgb(true)); // output: "rgb(255, 255, 255)"
 ```
 
-Or directly in a javascript script
+Or directly in a javascript
 ```javascript
 <script>
 
