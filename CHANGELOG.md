@@ -1,3 +1,4 @@
+
 ## 1.1.0
 - Introduce rgbAsStr() / rgbaAsStr() methods
 - Introduce boolean parameter to transform as a string rgb/rgba value with rgb()/rgba() methods
