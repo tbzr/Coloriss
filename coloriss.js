@@ -126,6 +126,7 @@
 
         Coloriss.prototype.rgb = function (str) {
 	    if (typeof this._rgb !== 'undefined' && this._rgb.a) {
+	    delete this._rgb.a;
             if (typeof str !== 'undefined' && str) {
                 return toString(this._rgb);
             }
