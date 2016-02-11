@@ -26,7 +26,8 @@
         };
 
         var Coloriss = function (color, options) {
-            this._hex = this._rgb = undefined;
+            this._hex = '';
+	    this._rgb = {};
             // Options not used yet.
             if (typeof color !== 'undefined') {
                 this.parse(color);
