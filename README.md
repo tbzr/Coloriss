@@ -1,7 +1,8 @@
 # Coloriss 
 
 [![Build Status](https://travis-ci.org/tbzr/coloriss.png)](https://travis-ci.org/tbzr/coloriss)
-[![npm version](https://badge.fury.io/js/coloriss.svg)](https://badge.fury.io/js/coloriss)
+[![npm version](https://badge.fury.io/js/coloriss.png)](https://badge.fury.io/js/coloriss)
+
 RGB | Hex converter. Easy to implement for both client-side or server-side services.
 
 ## Installation
