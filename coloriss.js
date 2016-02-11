@@ -45,12 +45,12 @@
 
         var sanitizeHex = function (hex) {
 
-        	if (hex.indexOf('#') > -1)
-        		hex = hex.substr(1, hex.length);
-        	if (hex.length === 3)
-        		hex += hex;
+		if (hex.indexOf('#') > -1)
+			hex = hex.substr(1, hex.length);
+		if (hex.length === 3)
+			hex += hex;
 
-        	return hex.toUpperCase();
+		return hex.toUpperCase();
         };
 
         var hexToRGB = function (hex) {
@@ -124,12 +124,12 @@
         };
 
         Coloriss.prototype.rgb = function (str) {
-        	delete this._rgb.a;
-
+	    if (typeof this._rgb !== 'undefined' && this._rgb.a) {
             if (typeof str !== 'undefined' && str) {
                 return toString(this._rgb);
             }
             return this._rgb;
+	    }
         };
 
         Coloriss.prototype.rgba = function (str) {
